@@ -165,7 +165,7 @@ input:hover, textarea:hover { background-color: #eee; outline: none; }
         color: #fff;
         padding: 10px 15px;
         border-radius: 0 0 5px 5px;
-        background-color: #594255;
+        background-color: #513743;
         display: inline-block;
         font-size: 18px;
         font-weight: bold;
@@ -174,7 +174,7 @@ input:hover, textarea:hover { background-color: #eee; outline: none; }
         -moz-box-shadow: 0 0 1em rgba(0, 0, 0, .4);
         box-shadow: 0 0 1em rgba(0, 0, 0, .4);
     }
-    #header h1 a:hover { background-color: #144052; }
+    #header h1 a:hover { background-color: #594255; }
 #header small {
     display: block;
     font-size: 12px;
@@ -269,7 +269,7 @@ pre {
     line-height: 1.4;
     padding: 1em;
     margin: 1em 0 1.5em;
-    background-color: #594255;
+    background-color: #513743;
     color: #d1d1d1;
     font-family: 'Menlo', 'M+2VM+IPAG circle', 'Osaka-Mono', 'ＭＳ ゴシック', 'MS Gothic', 'VL Gothic', monospace;
     border-radius: .5em;
