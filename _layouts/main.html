@@ -1,0 +1,112 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>
+            {{ page.title }}
+            {% if paginator %}
+                {% if paginator.page > 1 %}
+                    - page {{ paginator.page }}
+                {% endif %}
+            {% endif %}
+            {% if page.show_suffix_title %}
+                &laquo; 穴痔・イボ痔 &laquo; プログラマ闘病記録
+            {% endif %}
+        </title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        {% if page.description %}
+        	<meta name="description" content="{{ page.description }}">
+        {% endif %}
+        {% if page.meta.robots %}
+        	<meta name="robots" content="{{ page.meta.robots }}">
+        {% endif %}
+        {% if page.canonical %}
+            <link rel="canonical" href="{{ page.canonical }}">
+        {% endif %}
+        {% if page.stylesheets %}
+            {% for stylesheet in page.stylesheets %}
+                <link rel="stylesheet" href="{{ stylesheet }}"> 
+            {% endfor %}
+        {% endif %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+            ga('create', 'UA-17392775-15');
+            ga('send', 'pageview');
+        </script>
+        <!-- Google AdSense/ -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-1182643073398882",
+                  enable_page_level_ads: true
+             });
+        </script>
+        <!-- /Google AdSense -->
+
+        <meta name="google-site-verification" content="tPbl9pGBdKvXdHt600HYHjuqcwMYO4-Gl6Utj3YANgA">
+
+        <style>
+            
+        </style>
+    </head>
+    <body id="top">
+        <header id="header" class="clearfix">
+            <h1><a href="/">痔瘻・痔核プログラマ闘病記録<br>〜発症から手術入院、完治まで〜</a></h1>
+            <small>
+                2008 年頃に肛門周辺腫瘍を発病し、放置、2014 年 10 月に痔瘻（あな痔）発覚。<br>
+                しかも、痔瘻・痔核が数カ所あることが判明。近日中に入院・手術することとなり...
+            </small>
+        </header>
+
+        <div id="pagebody" class="clearfix">
+            <section id="main" class="clearfix">
+                {{ content }}
+            </section>
+            <!-- /#main -->
+
+            <div id="sider" class="clearfix">
+                <div class="sider-inner">
+                    {% assign tag_names = "" | split: "|"  %}
+                    {% for posts_by_tag in site.tags %}
+                      {% assign tag_names = tag_names | push: posts_by_tag.first %}
+                    {% endfor %}
+                    {% assign tag_names = tag_names | sort %}
+                    <section class="sider-group clearfix">
+                        <h1 class="sider-title">カテゴリー</h1>
+                        <ul id="tags">
+                            {% for tag_name in tag_names %}
+                                <li><a href="{{ site.baseurl }}/tag/{{ tag_name | slugize }}">
+                                    {{ tag_name }}
+                                </a></li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <!-- /#sider -->
+
+        </div>
+        <!-- /#pagebody -->
+
+        <footer id="footer" class="clearfix">
+            <div class="footer-menu fixed-width clearfix">
+                <div class="copyright">
+                    &copy; <a href="/">JIRO-PROGRAMMER</a>.
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-545f1cf45840eb06"></script>
+        <!-- Amazon Publisher Studio/ -->
+        <script> var amzn_ps_tracking_id = "jirou-programmer-22"; </script>
+        <script async="true" type="text/javascript" src="//d35h7tny4b24fd.cloudfront.net/scripts/JP/studio.js"></script>
+        <!-- /Amazon Publisher Studio -->
+    </body>
+</html>
